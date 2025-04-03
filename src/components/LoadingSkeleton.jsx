@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const LoadingSkeleton = () => {
   const setActiveBarIndex = useState(0)[1];
   const [barWidths, setBarWidths] = useState([0, 0, 0, 0, 0, 0, 0, 0]);
-  const targetWidths = [90, 85, 80, 70, 60, 50, 40, 35, 30, 15, 5];
+  const targetWidths = [90, 85, 80, 90, 70, 60, 40, 85, 50, 40, 35, 30, 15, 5];
   
   useEffect(() => {
     // Show bars sequentially
