@@ -2,6 +2,7 @@ import { useState } from "react"
 import ChatInput from "./components/ChatInput"
 import ChatResponse from "./components/ChatResponse"
 import { fetchChatResponse } from "./services/api";
+import LoadingSkeleton from "./components/LoadingSkeleton";
 
 function App() {
   
@@ -32,7 +33,13 @@ function App() {
           <h3 className="text-gray-400">Hey there, ask any question you have!</h3>
         </header>
         <div className="flex-1 bg-[#171717] w-full overflow-auto response-box">
-          <ChatResponse response={response}/>
+          {
+            loading?(
+              <LoadingSkeleton/>
+            ):(
+              <ChatResponse response={response}/>
+            )
+          }
         </div>
         <div className="w-full">
           <ChatInput onSubmit={handleQuestionSubmit}/>
